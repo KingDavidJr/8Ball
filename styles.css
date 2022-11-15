@@ -1,0 +1,53 @@
+#output {
+    font-size: 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #677ca5;
+}
+
+#question {
+    font-size: 20px;
+    width: 50%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#questionText {
+    font-size: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#pastQuestion {
+  background-color: #4093b6;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 15px 35px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#pastQuestion:hover {
+    background-color: #578193;
+}
+
+#questionText:hover {
+    color: #4093b6;
+}
+
+#image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

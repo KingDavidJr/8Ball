@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "UTF-8">
+    <title>Magic 8 Ball</title>
+    <link rel = "stylesheet" type = "text/css" href = "styles.css">
+</head>
+<body>
+    <form onsubmit = "return false">
+        <label id ="questionText" for = "question" >If you've got a question, you ask the 8 ball.</label>
+        <br><br>
+        <input type = "text" id = "question" name = "question">
+        <br><br>
+        <input type = "image" src = "8ball.png" id = "image" onclick = "getResponse()">
+        <br><br>
+        <input type = "button" value = "Get past Question" id = "pastQuestion" onclick = "getPastQuestion()">
+        <div id = "output"></div>
+    </form>
+    <script>
+        var pastQuestion = "";
+        var lst = ["It is decidedly so.", "Without a doubt.", "You may rely on it.", 
+            "Outlook good.", "Signs point to yes.",
+            "Reply hazy, try again.", "Concentrate and ask again.",
+            "Cannot predict now.", "My sources say no.", "Outlook not so good."]; // a list of possible answers. -- Put in a list to prevent the repetition of if statements
+        function getResponse() {
+            var ranNum = Math.floor(Math.random() * 9); // gets a random number for the response
+            var outputId = document.getElementById("output"); // projects the answer from the random number referenced by a list of answers
+            var questionTxt = document.getElementById("question").value;
+            if (!questionTxt || questionTxt == "" || questionTxt == " ")
+            {
+                outputId.innerHTML = "Please enter a valid question";
+            }
+            else { 
+                outputId.innerHTML = lst[ranNum];
+                pastQuestion = questionTxt
+                document.getElementById("question").value = ""; // clears the text field
+            }
+        }
+        function getPastQuestion() {
+            document.getElementById("question").value = pastQuestion
+        }
+    </script>
+</body>
+</html>
